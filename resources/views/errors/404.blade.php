@@ -1,6 +1,6 @@
 @extends('layouts.errorTemplate')
 
-@section('title', '503 Service unavailable')
+@section('title', 'Page not found')
 
 @section('body')
     @parent
@@ -23,9 +23,7 @@
     <div class="row" style="text-align:center">
         <div class="col-lg-12">
             <div class="content">
-                <div class="title">Oeps, kan de server niet bereiken</div>
-                <div class="title" style="font-size:40px">Probeer het opnieuw! Als het probleem zich blijft voordoen, neem dan contact met ons op.</div>
-
+                <div class="title">Oeps! Deze pagina bestaat niet.</div>
             </div>
         </div>
     </div>

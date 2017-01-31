@@ -42,3 +42,11 @@ Route::get('repetitieschema', function () {
 Route::get('agendatest', function () {
     return view('agenda2');
 });
+
+Route::get('downloads', function () {
+    return view('downloads');
+})->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

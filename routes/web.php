@@ -47,6 +47,19 @@ Route::get('downloads', function () {
     return view('downloads');
 })->middleware('auth');
 
+//Route::get('profiel', function () {
+//    return view('profiel');
+//});
+
+Route::get('/profiel', [
+        'as' => 'user.edit',
+        'uses' => 'ProfileController@edit'
+    ])->middleware('auth');
+Route::put('/profiel', [
+        'as' => 'user.update',
+        'uses' => 'ProfileController@update'
+    ])->middleware('auth');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

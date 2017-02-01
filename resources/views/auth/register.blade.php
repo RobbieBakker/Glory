@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('firstName') ? ' has-error' : '' }}">
-                            <label for="firstName" class="col-md-4 control-label">firstName</label>
+                            <label for="firstName" class="col-md-4 control-label">Voornaam</label>
 
                             <div class="col-md-6">
                                 <input id="firstName" type="text" class="form-control" name="firstName" value="{{ old('firstName') }}" required autofocus>
@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('lastName') ? ' has-error' : '' }}">
-                            <label for="lastName" class="col-md-4 control-label">lastName</label>
+                            <label for="lastName" class="col-md-4 control-label">Achternaam</label>
 
                             <div class="col-md-6">
                                 <input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName') }}" required autofocus>
@@ -39,7 +39,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">E-Mail</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -55,7 +55,7 @@
 
 
                         <div class="form-group{{ $errors->has('birthday') ? ' has-error' : '' }}">
-                            <label for="birthday" class="col-md-4 control-label">birthday</label>
+                            <label for="birthday" class="col-md-4 control-label">Geboortedatum</label>
 
                             <div class="col-md-6">
                                 <input id="birthday" type="date" class="form-control" name="birthday" value="{{ old('birthday') }}" required autofocus>
@@ -68,11 +68,30 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('voice') ? ' has-error' : '' }}">
-                            <label for="voice" class="col-md-4 control-label">Voice</label>
+                        <!--<div class="form-group{{ $errors->has('voice') ? ' has-error' : '' }}">
+                            <label for="voice" class="col-md-4 control-label">Stemgroep</label>
 
                             <div class="col-md-6">
                                 <input id="voice" type="text" class="form-control" name="voice" value="{{ old('voice') }}" required autofocus>
+
+                                @if ($errors->has('voice'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('voice') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>-->
+
+                        <div class="form-group{{ $errors->has('voice') ? ' has-error' : '' }}">
+                            <label for="voice" class="col-md-4 control-label">Stemgroep</label>
+
+                            <div class="col-md-6">
+                                <select name="voice">
+                                    <option value="Sopraan">Sopraan</option>
+                                    <option value="Alt">Alt</option>
+                                    <option value="Tenor">Tenor</option>
+                                    <option value="Bas">Bas</option>
+                                </select>
 
                                 @if ($errors->has('voice'))
                                     <span class="help-block">
@@ -98,7 +117,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Wachtwoord</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -112,7 +131,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Wachtwoord bevestigen</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>

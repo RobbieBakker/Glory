@@ -5,45 +5,58 @@
 @section('body')
     @parent
 
+        <!-- <div class="alert alert-success alert-dismissible fade in" role="alert"  style="z-index:1;">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            De repetitie is succesvol verwijderd!
+        </div> -->
+
+        <!-- @if (session('status')) -->
+            <script>alert('De repetitie is succesvol verwijderd!')</script>
+        <!-- @endif -->
+
         <!-- Page Heading/Breadcrumbs -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">
-                        Repetitieschema
-                        <small>Locatie &amp; Tijden</small>
-                    </h1>
-                    <ol class="breadcrumb">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li class="active">Repetitieschema</li>
-                    </ol>
-                </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Repetitieschema
+                    <small>Locatie &amp; Tijden</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="active">Repetitieschema</li>
+                </ol>
             </div>
-            <!-- /.row -->
+        </div>
+        <!-- /.row -->
 
 
 
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Repetitieschema 2016-2017</div>
 
-                <!-- Table -->
-                <table class="table">
-                    <tr><th>#</th><th>Datum</th><th>Locatie</th><th>Tijd</th></tr>
-                    <tr><th>4</th><td>08-02-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>5</th><td>22-02-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>6</th><td>01-03-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>7</th><td>15-03-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>8</th><td>29-03-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>9</th><td>05-04-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>10</th><td>19-04-2017</td><td>Zorgcentrum Pedaja: Claversweer 1, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>11</th><td>10-05-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>12</th><td>24-05-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>13</th><td>07-06-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>14</th><td>21-06-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam</td><td>19:30-21:00</td></tr>
-                    <tr><th>15</th><td>05-07-2017</td><td>Nieuwe Kerk: Nieuweweg 57, Hardinxveld-Giessendam (Generale repetitie)</td><td>19:30-21:00</td></tr>
-                </table>
-            </div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Repetitieschema</div>
+
+            <!-- Table -->
+            <table class="table">
+                <tr><th>#</th><th>Datum</th><th>Tijd</th><th>Locatie</th><th>Adres</th><th>Bijzonderheden</th></tr>
+                <!-- {{$id = 1}} -->
+                @foreach($rehearsals as $rehearsal)
+                    <tr><th>{{$id}}</th><td>{{$rehearsal->date}}</td><td>{{$rehearsal->time}}</td><td>{{$rehearsal->location_name}}</td><td>{{$rehearsal->location_address}}</td><td>{{$rehearsal->description}}</td></tr>
+                    <!-- {{$id = $id + 1}} -->
+                @endforeach
+            </table>
+        </div>
+
+        <script>
+            window.setTimeout(function() {
+                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove();
+                });
+            }, 5000);
+        </script>
 
 @endsection

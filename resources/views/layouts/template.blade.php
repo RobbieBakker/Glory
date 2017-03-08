@@ -27,6 +27,16 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <!-- Scripts -->
+        <script>
+            window.Laravel = <?php echo json_encode([
+                'csrfToken' => csrf_token(),
+            ]); ?>
+        </script>
+
     </head>
 
     <body>
@@ -74,9 +84,12 @@
                         @endif
                         @if( Auth::check() )
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->firstName }}&nbsp{{ Auth::user()->lastName }}<span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->firstName }}<?php if(Auth::user()->namePrefix){echo "&nbsp"; echo Auth::user()->namePrefix;} ?>&nbsp{{ Auth::user()->lastName }}<span class="caret"></span></a>
                                 <ul class="dropdown-menu" style="background-color:#222; color:#9d9d9d !important">
                                     <li {{{ (Request::is('profiel') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('profiel') ? 'color:white;' : '') }}}><a href="/profiel" style="color:inherit">Profiel</a></li>
+                                    @if ( Auth::user()->admin == "true" )
+                                        <li {{{ (Request::is('register') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('register') ? 'color:white;' : '') }}}><a href="/register" style="color:inherit">Gebruikers registreren</a></li>
+                                    @endif
                                     <li {{{ (Request::is('downloads') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('downloads') ? 'color:white;' : '') }}}><a href="/downloads" style="color:inherit">Downloads</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  style="color:inherit">

@@ -29,6 +29,11 @@ class RegisterController extends Controller
      */
     protected $redirectTo = '/';
 
+    protected function showRegistrationForm()
+    {
+        return redirect()->to('registratie');
+    }
+
     /**
      * Create a new controller instance.
      *
@@ -49,6 +54,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'firstName' => 'required|max:255',
+            'namePrefix' => 'max:255',
             'lastName' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'birthday' => 'required|date|before:today',
@@ -68,6 +74,7 @@ class RegisterController extends Controller
     {
         return User::create([
             'firstName' => $data['firstName'],
+            'namePrefix' => $data['namePrefix'],
             'lastName' => $data['lastName'],
             'email' => $data['email'],
             'birthday' => $data['birthday'],

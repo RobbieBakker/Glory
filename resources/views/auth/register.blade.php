@@ -24,6 +24,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('namePrefix') ? ' has-error' : '' }}">
+                            <label for="namePrefix" class="col-md-4 control-label">Tussenvoegsel</label>
+
+                            <div class="col-md-6">
+                                <input id="namePrefix" type="text" class="form-control" name="namePrefix" value="{{ old('namePrefix') }}" autofocus>
+
+                                @if ($errors->has('namePrefix'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('namePrefix') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('lastName') ? ' has-error' : '' }}">
                             <label for="lastName" class="col-md-4 control-label">Achternaam</label>
 

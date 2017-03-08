@@ -40,6 +40,6 @@ class ProfileController extends Controller {
         $user->voice=$request->input('voice');
 
         $user->save();
-        return redirect()->route('/');
+        return redirect()->action('ProfileController@edit');
     }
 }

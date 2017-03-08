@@ -30,6 +30,13 @@
                             </div>
 
                             <div class="form-group col-md-8 col-md-offset-2">
+                                {!! Form::label('namePrefix', 'Tussenvoegsel') !!}
+                                {!! Form::text('namePrefix', $user->namePrefix, [
+                                    'class' => 'form-control'
+                                ]) !!}
+                            </div>
+
+                            <div class="form-group col-md-8 col-md-offset-2">
                                 {!! Form::label('lastName', 'Achternaam') !!}
                                 {!! Form::text('lastName', $user->lastName, [
                                     'class' => 'form-control'
@@ -78,7 +85,7 @@
                     <div class="panel-body">
                         <div class="col-md-12">
                             <label class="col-md-6 control-label">Naam:</label>
-                            {{ Auth::user()->firstName }}&nbsp{{ Auth::user()->lastName }}
+                            {{ Auth::user()->firstName }}&nbsp{{ Auth::user()->namePrefix }}&nbsp{{ Auth::user()->lastName }}
                         </div>
 
                         <div class="col-md-12">

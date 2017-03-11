@@ -16,7 +16,7 @@ class Rehearsals extends Migration
         Schema::create('rehearsals', function (Blueprint $table) {
             $table->increments('id');
             $table->date('date');
-            $table->text('time');
+            $table->time('time');
             $table->text('description');
             $table->text('location_name');
             $table->text('location_address');

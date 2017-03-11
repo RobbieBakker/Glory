@@ -27,29 +27,23 @@ Route::get('contact', function () {
     return view('contact');
 });
 
-Route::get('agenda', function () {
-    return view('agenda');
-});
+Route::resource('agenda', 'AgendaController');
 
 Route::get('dirigent', function () {
     return view('dirigent');
 });
 
-Route::get('repetitieschema', function () {
-    return view('repetitieschema');
-});
+Route::get('/repetitieschema', 'RepetitieController@rehearsals');
+Route::delete('/repetitieschema/{id}', [
+    'as' => 'rehearsal.destroy',
+    'uses' => 'RepetitieController@destroy'
+]);
 
-Route::get('agendatest', function () {
-    return view('agenda2');
-});
 
 Route::get('downloads', function () {
     return view('downloads');
 })->middleware('auth');
-
-//Route::get('profiel', function () {
-//    return view('profiel');
-//});
+Route::get('downloadStatuten', 'DownloadController@downloadStatuten');
 
 Route::get('/profiel', [
         'as' => 'user.edit',
@@ -61,5 +55,3 @@ Route::put('/profiel', [
     ])->middleware('auth');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');

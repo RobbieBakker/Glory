@@ -6,6 +6,7 @@ use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use View;
 
 class RegisterController extends Controller
 {
@@ -31,7 +32,7 @@ class RegisterController extends Controller
 
     protected function showRegistrationForm()
     {
-        return redirect()->to('registratie');
+        return View::make('auth.register');
     }
 
     /**

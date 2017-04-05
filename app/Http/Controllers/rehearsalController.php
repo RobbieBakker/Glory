@@ -15,6 +15,18 @@ use DateTime;
 
 class rehearsalController extends Controller
 {
+
+    public function guestIndex()
+    {
+        // get all the nerds
+        $datetime = new DateTime('yesterday');
+        $rehearsals = Rehearsal::where('date', '>', $datetime)->orderBy('date', 'asc')->get();
+
+        // load the view and pass the nerds
+        return View::make('repetitieschema')
+            ->with('rehearsals', $rehearsals);
+    }
+
     /**
      * Display a listing of the resource.
      *

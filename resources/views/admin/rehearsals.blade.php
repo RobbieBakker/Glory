@@ -95,7 +95,7 @@
                                         <td>{{ $value->end_time }}</td>
                                         <td>{{ $value->location_name }}</td>
                                         <td>{{ $value->location_address }}</td>
-                                        <td>{{ $value->price }}</td>
+                                        <td>{{ $value->description }}</td>
                                         <!-- we will also add show, edit, and delete buttons -->
                                         <td style="font-size:16px;">
 

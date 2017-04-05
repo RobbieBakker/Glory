@@ -34,17 +34,11 @@ Route::get('/agenda/{id}', [
 Route::resource('/admin/agenda', 'AgendaController');
 
 Route::resource('admin/repetities', 'rehearsalController');
+Route::get('/repetitieschema', 'rehearsalController@guestIndex');
 
 Route::get('dirigent', function () {
     return view('dirigent');
 });
-
-Route::get('/repetitieschema', 'RepetitieController@rehearsals');
-Route::delete('/repetitieschema/{id}', [
-    'as' => 'rehearsal.destroy',
-    'uses' => 'RepetitieController@destroy'
-])->middleware('auth');
-
 
 Route::get('downloads', function () {
     return view('downloads');

@@ -27,8 +27,13 @@ Route::get('contact', function () {
     return view('contact');
 });
 
-//Route::resource('agenda', 'ShowAgendaController');
+Route::get('agenda', 'AgendaController@guestIndex');
+Route::get('/agenda/{id}', [
+    'as' => 'agenda.show',
+    'uses' => 'AgendaController@guestDetailView']);
 Route::resource('/admin/agenda', 'AgendaController');
+
+Route::resource('admin/repetities', 'rehearsalController');
 
 Route::get('dirigent', function () {
     return view('dirigent');

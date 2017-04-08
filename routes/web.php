@@ -44,6 +44,7 @@ Route::get('downloads', function () {
     return view('downloads');
 })->middleware('auth');
 Route::get('downloadStatuten', 'DownloadController@downloadStatuten')->middleware('auth');
+Route::get('downloadReglement', 'DownloadController@downloadReglement')->middleware('auth');
 
 
 Route::get('/admin/index', function () {

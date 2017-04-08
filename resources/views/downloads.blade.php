@@ -29,7 +29,7 @@
                     <div class="panel-body" style="text-align:center">
                         <p>Bij de oprichting zijn de statuten vastgesteld. Deze statuten zijn een leidraad voor het handelen van de leden en het bestuur. Naast de statuten is er ook een huishoudelijk reglement. Hierin zijn lopende zaken met betrekking tot repetitieavonden, uitvoeringen, bestuursvergaderingen, jaarvergaderingen en de muziekcommissie beschreven. Beide bestanden zijn hieronder te downloaden.</p>
                         <a class="btn btn-primary" href="/downloadStatuten" style="background-color:#333; border-color:#333">Download</i></a>
-                        <a class="btn btn-primary" href="" style="background-color:#333; border-color:#333">Download</i></a>
+                        <a class="btn btn-primary" href="/downloadReglement" style="background-color:#333; border-color:#333">Download</i></a>
                     </div>
                 </div>
             </div>

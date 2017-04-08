@@ -11,4 +11,9 @@ class DownloadController extends Controller
     {
         return response()->download(public_path(). "/files/Statuten.pdf", 'Statuten.pdf');
     }
+
+    public function downloadReglement()
+        {
+            return response()->download(public_path(). "/files/Huishoudelijk_Reglement.pdf", 'Huishoudelijk Reglement.pdf');
+        }
 }

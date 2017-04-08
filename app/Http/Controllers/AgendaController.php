@@ -20,6 +20,30 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function guestIndex()
+    {
+        // get all the nerds
+        $datetime = new DateTime('yesterday');
+        $agendaItems = AgendaItem::where('date', '>', $datetime)->orderBy('date', 'asc')->get();
+
+        // load the view and pass the nerds
+        return View::make('agenda.index')
+            ->with('agendaItems', $agendaItems);
+    }
+    public function guestDetailView($id)
+    {
+        // get the agenda item
+        $agendaItem = AgendaItem::find($id);
+
+        // show the view and pass the nerd to it
+        return View::make('agenda.show')
+            ->with('agendaItem', $agendaItem);
+    }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         // get all the nerds
@@ -114,15 +138,15 @@ class AgendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function edit($id)
-//    {
-//        // get the nerd
-//        $agendaItem = AgendaItem::find($id);
-//
-//        // show the edit form and pass the nerd
-//        return View::make('admin/agenda.edit')
-//            ->with('agendaItem', $agendaItem);
-//    }
+    public function edit($id)
+    {
+        // get the nerd
+        $agendaItem = AgendaItem::find($id);
+
+        // show the edit form and pass the nerd
+        return View::make('admin/agenda.edit')
+            ->with('agendaItem', $agendaItem);
+    }
 
     /**
      * Update the specified resource in storage.
@@ -131,54 +155,54 @@ class AgendaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-//    public function update(Request $request, $id)
-//    {
-//        // validate
-//        // read more on validation at http://laravel.com/docs/validation
-//        $rules = array(
-//            'date'       => 'required|date',
-//            'start_time'      => 'required',
-//            'end_time' => 'required',
-//            'title'       => 'required',
-//            'text'      => 'required',
-//            'location_name' => 'required',
-//            'location_address' => 'required',
-//            'price' => 'required|numeric',
-//            'img_url'      => '',
-//            'website_url' => '',
-//        );
-//        $validator = Validator::make(Input::all(), $rules);
-//
-//        // process the login
-//        if ($validator->fails()) {
-//            return Redirect::to('admin/agenda/' . $id . '/edit')
-//                ->withErrors($validator)
-//                ->withInput(Input::except('password'));
-//        } else {
-//            // store
-////            $allItems = DB::table('agenda')->where('id', $id)->get();
-////            foreach($allItems as $value){
-////                $agendaItem = $value;
-////            }
-//            $agendaItem = AgendaItem::find($id);
-//
-//            $agendaItem->date       = Input::get('date');
-//            $agendaItem->start_time      = Input::get('start_time');
-//            $agendaItem->end_time = Input::get('end_time');
-//            $agendaItem->title       = Input::get('title');
-//            $agendaItem->text      = Input::get('text');
-//            $agendaItem->location_name = Input::get('location_name');
-//            $agendaItem->location_address       = Input::get('location_address');
-//            $agendaItem->price = Input::get('price');
-//            $agendaItem->img_url      = Input::get('img_url');
-//            $agendaItem->website_url = Input::get('website_url');
-//            $agendaItem->save();
-//
-//            // redirect
-//            Session::flash('message', 'Successfully updated agenda item!');
-//            return Redirect::to('admin/agenda');
-//        }
-//    }
+    public function update(Request $request, $id)
+    {
+        // validate
+        // read more on validation at http://laravel.com/docs/validation
+        $rules = array(
+            'date'       => 'required|date',
+            'start_time'      => 'required',
+            'end_time' => 'required',
+            'title'       => 'required',
+            'text'      => 'required',
+            'location_name' => 'required',
+            'location_address' => 'required',
+            'price' => 'required|numeric',
+            'img_url'      => '',
+            'website_url' => '',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('admin/agenda/' . $id . '/edit')
+                ->withErrors($validator)
+                ->withInput(Input::except('password'));
+        } else {
+            // store
+//            $allItems = DB::table('agenda')->where('id', $id)->get();
+//            foreach($allItems as $value){
+//                $agendaItem = $value;
+//            }
+            $agendaItem = AgendaItem::find($id);
+
+            $agendaItem->date       = Input::get('date');
+            $agendaItem->start_time      = Input::get('start_time');
+            $agendaItem->end_time = Input::get('end_time');
+            $agendaItem->title       = Input::get('title');
+            $agendaItem->text      = Input::get('text');
+            $agendaItem->location_name = Input::get('location_name');
+            $agendaItem->location_address       = Input::get('location_address');
+            $agendaItem->price = Input::get('price');
+            $agendaItem->img_url      = Input::get('img_url');
+            $agendaItem->website_url = Input::get('website_url');
+            $agendaItem->save();
+
+            // redirect
+            Session::flash('message', 'Successfully updated agenda item!');
+            return Redirect::to('admin/agenda');
+        }
+    }
 
     /**
      * Remove the specified resource from storage.

@@ -23,6 +23,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Geplande concerten
+
+                        <!-- show the agenda item (uses the show method found at GET /agenda/{id} -->
+                        <a class="btn btn-small btn-success fa fa-plus-circle" href="{{ URL::to('admin/agenda/create') }}" title="Nieuw concert toevoegen"></a>
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -58,7 +61,7 @@
                                             <a style="display:inline-block" class="btn btn-small btn-success fa fa-info-circle" href="{{ URL::to('admin/agenda/' . $value->id) }}"></a>
 
                                             <!-- edit this agenda item (uses the edit method found at GET /admin/agenda/{id}/edit -->
-                                            <!-- <a style="display:inline-block" class="btn btn-small btn-info fa fa-edit" href="{{ URL::to('admin/agenda/' . $value->id . '/edit') }}"></a> -->
+                                            <a style="display:inline-block" class="btn btn-small btn-info fa fa-edit" href="{{ URL::to('admin/agenda/' . $value->id . '/edit') }}"></a>
 
                                             <!-- delete the agenda item (uses the destroy method DESTROY /agenda/{id} -->
                                             <!-- we will add this later since its a little more complicated than the other two buttons -->
@@ -72,7 +75,7 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                                <tr class="odd gradeX">
+                                <!-- <tr class="odd gradeX">
                                     <td>Trident</td>
                                     <td>Internet Explorer 4.0</td>
                                     <td>Win 95+</td>
@@ -93,7 +96,7 @@
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>

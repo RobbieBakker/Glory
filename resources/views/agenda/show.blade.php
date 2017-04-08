@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'INSERT')
+@section('title', 'Details')
 
 @section('body')
     @parent

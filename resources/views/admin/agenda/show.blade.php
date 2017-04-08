@@ -1,6 +1,6 @@
 @extends('layouts.adminTemplate')
 
-@section('title', 'INSERT')
+@section('title', 'Details')
 
 @section('body')
     @parent

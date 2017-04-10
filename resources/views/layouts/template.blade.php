@@ -88,7 +88,6 @@
                                 <ul class="dropdown-menu" style="background-color:#222; color:#9d9d9d !important">
                                     <li {{{ (Request::is('profiel') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('profiel') ? 'color:white;' : '') }}}><a href="/profiel" style="color:inherit">Profiel</a></li>
                                     @if ( Auth::user()->admin == "true" )
-                                        <li {{{ (Request::is('register') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('register') ? 'color:white;' : '') }}}><a href="/register" style="color:inherit">Gebruikers registreren</a></li>
                                         <li {{{ (Request::is('/admin/index') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('/admin/index') ? 'color:white;' : '') }}}><a href="/admin/index" style="color:inherit">Admin Panel</a></li>
                                     @endif
                                     <li {{{ (Request::is('downloads') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('downloads') ? 'color:white;' : '') }}}><a href="/downloads" style="color:inherit">Downloads</a></li>

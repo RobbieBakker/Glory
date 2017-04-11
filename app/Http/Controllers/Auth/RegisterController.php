@@ -60,7 +60,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'birthday' => 'required|date|before:today',
             'voice' => 'required',
-            'admin' => 'required',
+            'role' => 'required',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'birthday' => $data['birthday'],
             'voice' => $data['voice'],
-            'admin' => $data['admin'],
+            'role' => $data['role'],
             'password' => bcrypt($data['password']),
         ]);
     }

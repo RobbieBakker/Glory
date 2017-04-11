@@ -49,7 +49,7 @@ Route::get('downloadReglement', 'DownloadController@downloadReglement')->middlew
 
 Route::get('/admin/index', function () {
     return view('admin/index');
-})->middleware('auth');
+})->middleware('admin:admin');
 
 Route::get('/profiel', [
         'as' => 'user.edit',

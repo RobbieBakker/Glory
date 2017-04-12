@@ -27,29 +27,27 @@ Route::get('contact', function () {
     return view('contact');
 });
 
-Route::get('agenda', 'AgendaController@guestIndex');
+Route::get('agenda', 'GuestController@agendaIndex');
 Route::get('/agenda/{id}', [
     'as' => 'agenda.show',
-    'uses' => 'AgendaController@guestDetailView']);
-Route::resource('/admin/agenda', 'AgendaController');
+    'uses' => 'GuestController@agendaDetail']);
 
-Route::resource('admin/repetities', 'rehearsalController');
-Route::get('/repetitieschema', 'rehearsalController@guestIndex');
+Route::get('/repetitieschema', 'GuestController@rehearsalIndex');
 
 Route::get('dirigent', function () {
     return view('dirigent');
 });
+
+
+Auth::routes();
+
+//User routes
 
 Route::get('downloads', function () {
     return view('downloads');
 })->middleware('auth');
 Route::get('downloadStatuten', 'DownloadController@downloadStatuten')->middleware('auth');
 Route::get('downloadReglement', 'DownloadController@downloadReglement')->middleware('auth');
-
-
-Route::get('/admin/index', function () {
-    return view('admin/index');
-})->middleware('admin:admin');
 
 Route::get('/profiel', [
         'as' => 'user.edit',
@@ -60,4 +58,14 @@ Route::put('/profiel', [
         'uses' => 'ProfileController@update'
     ])->middleware('auth');
 
-Auth::routes();
+
+//Admin routes
+
+Route::get('/admin/index', function () {
+    return view('admin/index');
+})->middleware('admin:admin');
+
+Route::resource('admin/repetities', 'rehearsalController');
+Route::resource('/admin/agenda', 'AgendaController');
+
+Route::resource('/admin/users', 'UserController');

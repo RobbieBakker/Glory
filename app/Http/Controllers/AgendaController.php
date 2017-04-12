@@ -31,30 +31,6 @@ class AgendaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function guestIndex()
-    {
-        // get all the nerds
-        $datetime = new DateTime('yesterday');
-        $agendaItems = AgendaItem::where('date', '>', $datetime)->orderBy('date', 'asc')->get();
-
-        // load the view and pass the nerds
-        return View::make('agenda.index')
-            ->with('agendaItems', $agendaItems);
-    }
-    public function guestDetailView($id)
-    {
-        // get the agenda item
-        $agendaItem = AgendaItem::find($id);
-
-        // show the view and pass the nerd to it
-        return View::make('agenda.show')
-            ->with('agendaItem', $agendaItem);
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         // get all the nerds

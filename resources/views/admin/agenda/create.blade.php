@@ -69,6 +69,7 @@
             </div>
 
             {{ Form::submit('Create the Agenda item!', array('class' => 'btn btn-primary')) }}
+            <a class="btn btn-small btn-warning" href="{{ URL::to('admin/agenda') }}" title="Annuleren">Annuleren</a>
 
         {{ Form::close() }}
 

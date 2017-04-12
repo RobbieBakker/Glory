@@ -155,7 +155,7 @@
                             <a href="/admin/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="/admin/gebruiker"><i class="fa fa-user fa-fw"></i> Gebruikers toevoegen</a>
+                            <a href="/admin/users"><i class="fa fa-user fa-fw"></i> Gebruikers</a>
                         </li>
                         <li>
                             <a href="/admin/agenda"><i class="fa fa-table fa-fw"></i> Agenda</a>
@@ -179,6 +179,14 @@
 
     </div>
     <!-- /#wrapper -->
+
+    <script>
+        window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();
+            });
+        }, 5000);
+     </script>
 
     <!-- jQuery -->
     <script src="{{asset('js/jquery.js')}}"></script>

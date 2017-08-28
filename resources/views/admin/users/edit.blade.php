@@ -45,8 +45,14 @@
             </div>
 
             <div class="form-group">
-                {{ Form::label('voice', 'Stemgroep') }}
-                {{ Form::text('voice', Input::old('voice'), array('class' => 'form-control')) }}
+                <label for="voice" class=" control-label">Zangstem</label>
+                <br>
+                <select name="voice">
+                    <option value="Sopraan" @if( Auth::user()->voice == "Sopraan") selected @endif>Sopraan</option>
+                    <option value="Alt" @if( Auth::user()->voice == "Alt") selected @endif>Alt</option>
+                    <option value="Tenor" @if( Auth::user()->voice == "Tenor") selected @endif>Tenor</option>
+                    <option value="Bas" @if( Auth::user()->voice == "Bas") selected @endif>Bas</option>
+                </select>
             </div>
 
             <div class="form-group">

@@ -34,6 +34,7 @@ class ProfileController extends Controller {
         $id = Auth::user()->id;
         $user = User::findOrFail($id);
         $user->firstName=$request->input('firstName');
+        $user->namePrefix=$request->input('namePrefix');
         $user->lastName=$request->input('lastName');
         $user->email=$request->input('email');
         $user->birthday=$request->input('birthday');

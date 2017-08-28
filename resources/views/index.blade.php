@@ -17,17 +17,17 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('images/Koor1.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('images/Dirigent3.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('images/Koor2.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>

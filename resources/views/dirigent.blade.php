@@ -23,7 +23,7 @@
             <!-- Intro Content -->
             <div class="row">
                 <div class="col-md-6" style="margin-top:70px">
-                    <img class="img-responsive" src="../images/Dirigent2.png" alt="">
+                    <img class="img-responsive" src="../images/Dirigent2.jpg" alt="">
                 </div>
                 <div class="col-md-6">
                     <h2>Mark Brandwijk</h2>

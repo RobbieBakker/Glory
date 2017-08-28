@@ -33,11 +33,14 @@
                 <p>
                     Nieuweweg 57<br>3371 CJ, Hardinxveld-Giessendam<br>
                 </p>
+                <p style="color:#777; font-size:12px">
+                    LET OP! Bovenstaand adres is de repetitielocatie tenzij anders aangegeven.
+                </p>
             </div>
             <div class="col-md-4">
                 <h3>Contactgegevens</h3>
                 <p>
-                    Nieuweweg 18<br>3371 CP, Hardinxveld-Giessendam<br>
+                    Peulenlaan 245<br>3371XL, Hardinxveld-Giessendam<br>
                 </p>
                 <!--<p>
                     <i class="fa fa-phone"></i>

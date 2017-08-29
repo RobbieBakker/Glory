@@ -30,10 +30,10 @@
                     <p>Het bestuur bestaat uit vijf leden.</p>
                     <ul>
                         <li>Voorzitter: Anneleen Houtman</li>
-                        <li>Penningmeester: Maarten Moerman</li>
-                        <li>Secretaris: Mirthe Boerman</li>
+                        <li>Penningmeester: Arjan van Veen</li>
+                        <li>Secretaris: Lenneke Quist</li>
                         <li>Algemeen bestuurslid: Christine Kruithof</li>
-                        <li>Algemeen bestuurslid: Lenneke Quist</li>
+                        <li>Algemeen bestuurslid: Joanne Molenaar - van der Ham</li>
                     </ul>
                     <p>Naast het bestuur zijn er ook leden actief op de achtergrond. Er is een websitebeheerder, een fotograaf van het koor en iemand die de verantwoording draagt voor het openen en sluiten van de zanglocatie. Met elkaar wordt er veel geregeld en achter de schermen gedaan, zodat de repetitieavonden vloeiend verlopen.</p>
                     <p>Ook zijn er een aantal leden actief in de muziekcommissie. Samen met de dirigent en het bestuur stellen zij het repertoire samen. Daarnaast kunnen koorleden bij hen terecht voor suggesties.</p>

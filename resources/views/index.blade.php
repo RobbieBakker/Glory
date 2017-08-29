@@ -17,17 +17,17 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('images/Koor1.jpg');"></div>
+                <div class="fill" style="background-image:url('../images/Koor1.jpg');></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('images/Dirigent3.jpg');"></div>
+                <div class="fill" style="background-image:url('../images/Dirigent3.jpg');></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('images/Koor2.jpg');"></div>
+                <div class="fill" style="background-image:url('../images/Koor3.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
@@ -125,7 +125,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <a href="/info"><img class="img-responsive" src="images/Koor1.JPG" alt=""></a>
+                    <a href="/info"><img class="img-responsive" src="images/Koor1.jpg" alt=""></a>
                     <div class="caption">
                         <a href="/info" style="text-decoration:none; color:#333333;">
                             <h3>

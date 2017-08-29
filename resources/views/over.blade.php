@@ -23,7 +23,7 @@
         <!-- Intro Content -->
         <div class="row">
             <div class="col-md-6" style="margin-top:70px">
-                <img src="{{ asset('images/Koor1.JPG') }}" />
+                <img class="img-responsive" src="../images/Koor1.jpg" alt="">
             </div>
             <div class="col-md-6">
                 <h2>Over CJK Glory</h2>

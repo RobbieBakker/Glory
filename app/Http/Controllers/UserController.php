@@ -67,7 +67,6 @@ class UserController extends Controller
             'birthday' => 'required|date|before:today',
             'voice' => 'required',
             'role' => 'required',
-            'password' => 'required|min:6|confirmed',
         );
         $validator = Validator::make(Input::all(), $rules);
 
@@ -75,8 +74,10 @@ class UserController extends Controller
         if ($validator->fails()) {
             return Redirect::to('admin/users/create')
                 ->withErrors($validator)
-                ->withInput(Input::except('password'));
+                ->withInput();
         } else {
+
+            $pw = User::generatePassword();
             // store
             $user = new User;
             $user->firstName       = Input::get('firstName');
@@ -86,8 +87,10 @@ class UserController extends Controller
             $user->birthday      = Input::get('birthday');
             $user->voice        = Input::get('voice');
             $user->role        = Input::get('role');
-            $user->password     = bcrypt(Input::get('password'));
+            $user->password     = bcrypt($pw);
             $user->save();
+
+            User::sendWelcomeEmail($user, $pw);
 
             // redirect
             Session::flash('message', 'De gebruiker succesvol aangemaakt!');

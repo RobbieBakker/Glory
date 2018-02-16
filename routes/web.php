@@ -40,6 +40,7 @@ Route::get('dirigent', function () {
 
 
 Auth::routes();
+Route::post('/changePassword','ProfileController@changePassword')->name('changePassword');
 
 //User routes
 
@@ -69,3 +70,7 @@ Route::resource('admin/repetities', 'rehearsalController');
 Route::resource('/admin/agenda', 'AgendaController');
 
 Route::resource('/admin/users', 'UserController');
+
+//Route::get('welkom', function(){
+//    return view('emails.welcome');
+//});

@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\CanResetPassword;
+use App\Notifications\ResetPassword;
+use Mail;
 
 class User extends Authenticatable
 {
@@ -29,5 +32,19 @@ class User extends Authenticatable
 
     public function hasRole(){
         return $this->role;
+    }
+
+    public static function generatePassword(){
+        // Generate random string
+        return str_random(35);
+    }
+
+    public static function sendWelcomeEmail($user, $pw){
+
+        // Send email
+        Mail::send('emails.welcome', ['user' => $user, 'pw' => $pw], function ($m) use ($user) {
+            $m->from('noreply@jongerenkoorglory.nl', 'Christelijk Jongerenkoor Glory');
+            $m->to($user->email, $user->name)->subject('Uw login account bij CJK Glory');
+        });
     }
 }

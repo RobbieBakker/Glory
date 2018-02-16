@@ -70,7 +70,3 @@ Route::resource('admin/repetities', 'rehearsalController');
 Route::resource('/admin/agenda', 'AgendaController');
 
 Route::resource('/admin/users', 'UserController');
-
-//Route::get('welkom', function(){
-//    return view('emails.welcome');
-//});

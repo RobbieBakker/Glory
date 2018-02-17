@@ -486,7 +486,7 @@
             <div style="Margin-left: 20px;Margin-right: 20px;">
       <div style="mso-line-height-rule: exactly;mso-text-raise: 4px;">
         <h1 style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #565656;font-size: 30px;line-height: 38px;text-align: center;"><strong>Welkom bij Glory!</strong></h1><p style="Margin-top: 20px;Margin-bottom: 0;">&nbsp;<br>
-Hoi, {{ $user->firstName }}! <strong>Van harte welkom bij Christelijk Jongerenkoor Glory!</strong> Hartstikke leuk dat je lid geworden bent! Alle leden van Glory hebben een inlogaccount op de website, die krijg jij dus ook! Op de website is veel informatie te vinden over concerten, repetities en nog veel meer!</p>
+Hoi, {{ $user->firstName }}! <strong>Van harte welkom bij Christelijk Jongerenkoor Glory!</strong> Leuk dat je lid geworden bent! Alle leden van Glory hebben een inlogaccount op de website, die krijg jij dus ook. Op de website is veel informatie te vinden over concerten, repetities en nog veel meer.</p>
 <p style="Margin-top: 20px;Margin-bottom: 0;">Je kan op de website inloggen met het e-mailadres waar je deze e-mail op ontvangen hebt. Hieronder staat het wachtwoord die je hiervoor moet gebruiken. <strong>BELANGRIJK:</strong> Zorg ervoor dat zodra je ingelogd hebt, dat je je wachtwoord verandert! Dit kan je doen op je persoonlijke profielpagina (rechtsboven op je naam klikken en dan "Profiel."</p>
 <p style="Margin-top: 20px;Margin-bottom: 0;"><strong>Wachtwoord:&nbsp;</strong> {{ $pw }} </p>
 <p style="Margin-top: 20px;Margin-bottom: 20px;">Nogmaals welkom, en tot snel! :)</p>

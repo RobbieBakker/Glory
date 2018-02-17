@@ -91,7 +91,7 @@
                                 <label for="birthday" class="col-md-4 control-label">Geboortedatum</label>
 
                                 <div class="col-md-6">
-                                    <input id="birthday" type="date" class="form-control" name="birthday" value="{{ old('birthday') }}" required autofocus>
+                                    <input id="birthday" type="date" class="form-control" name="birthday" value="{{ old('birthday') }}" autofocus>
 
                                     @if ($errors->has('birthday'))
                                         <span class="help-block">
@@ -105,7 +105,7 @@
                                 <label for="voice" class="col-md-4 control-label">Stemgroep</label>
 
                                 <div class="col-md-6">
-                                    <input id="voice" type="text" class="form-control" name="voice" value="{{ old('voice') }}" required autofocus>
+                                    <input id="voice" type="text" class="form-control" name="voice" value="{{ old('voice') }}">
 
                                     @if ($errors->has('voice'))
                                         <span class="help-block">
@@ -120,6 +120,7 @@
 
                                 <div class="col-md-6">
                                     <select name="voice">
+                                        <option value=""></option>
                                         <option value="Sopraan">Sopraan</option>
                                         <option value="Alt">Alt</option>
                                         <option value="Tenor">Tenor</option>
@@ -153,7 +154,7 @@
                                 <label for="password" class="col-md-4 control-label">Wachtwoord</label>
 
                                 <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password" required>
+                                    <input id="password" type="password" class="form-control" name="password">
 
                                     @if ($errors->has('password'))
                                         <span class="help-block">
@@ -167,7 +168,7 @@
                                 <label for="password-confirm" class="col-md-4 control-label">Wachtwoord bevestigen</label>
 
                                 <div class="col-md-6">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
                                 </div>
                             </div>-->
 

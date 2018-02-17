@@ -64,8 +64,8 @@ class UserController extends Controller
             'namePrefix' => 'max:255',
             'lastName' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'birthday' => 'required|date|before:today',
-            'voice' => 'required',
+            'birthday' => '|date|before:today',
+            'voice' => '',
             'role' => 'required',
         );
         $validator = Validator::make(Input::all(), $rules);

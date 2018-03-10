@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\AccountSettings;
+use Illuminate\Support\Facades\Storage;
 use Input;
 use Auth;
 use App\User;
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use Hash;
 use Validator;
 use Image;
+use File;
 
 class ProfileController extends Controller {
 
@@ -59,10 +61,10 @@ class ProfileController extends Controller {
             return redirect()->back()->with("error","Het nieuwe wachtwoord mag niet hetzelfde zijn als het huidige wachtwoord. Kies een ander wachtwoord.");
         }
 
-        $validatedData = $this->validate($request, [
-            'current-password' => 'required',
-            'new-password' => 'required|string|min:6|confirmed',
-        ]);
+//        $validatedData = $this->validate($request, [
+//            'current-password' => 'required',
+//            'new-password' => 'required|string|min:6|confirmed',
+//        ]);
 
         //Change Password
         $user = Auth::user();
@@ -73,17 +75,21 @@ class ProfileController extends Controller {
 
     }
 
-    public function update_avatar(Request $request){
+    public function updateAvatar(Request $request){
 
         // Handle the user upload of avatar
         if($request->hasFile('avatar')){
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->widen(300)->crop(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+            $img = Image::make($avatar)->widen(300)->crop(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
 
             $user = Auth::user();
+            if(strcmp($user->avatar, "user.jpg") ) {
+                File::delete(public_path('/uploads/avatars/' . $user->avatar));
+            }
             $user->avatar = $filename;
             $user->save();
+            $img->destroy();
         }
 
         return redirect()->action('ProfileController@edit');

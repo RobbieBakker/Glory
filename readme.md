@@ -22,4 +22,4 @@ If you discover a security vulnerability within the Laravel code, please send an
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
-The Glory project is open-sourced software based on Laravel, licensed under the [MIT license](http://opensource.org/kicenses/MIT)
+The Glory project is open-sourced software based on Laravel, licensed under the [MIT license](http://opensource.org/licenses/MIT)

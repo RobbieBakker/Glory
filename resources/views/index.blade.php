@@ -91,11 +91,11 @@
         <!-- Team Members -->
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="page-header">Ons team</h2>
+                <h2 class="page-header">Glory</h2>
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <a href="/dirigent"><img class="img-responsive" src="images/Dirigent1.jpg" alt=""></a>
+                    <a href="/dirigent"><img class="img-responsive" src="images/Dirigent2.jpg" alt=""></a>
                     <div class="caption">
                         <a href="/dirigent" style="text-decoration:none; color:#333333;">
                             <h3>
@@ -118,14 +118,14 @@
                                 <small> <br /></small>
                             </h3>
                         </a>
-                        <p>Het bestuur bestaat uit vijf leden: Anneleen Houtman, Maarten Moerman, Mirthe Boerman, Christine Kruithof, Lenneke Quist. Naast het bestuur zijn er ook leden actief op de achtergrond. Er is een websitebeheerder, een fotograaf van het koor en iemand die de verantwoording draagt voor ...</p>
+                        <p>Het bestuur bestaat uit vijf leden: Anneleen Houtman, Arjan van Veen, Lenneke Quist, Christine Kruithof en Joanne Molenaar - van der Ham. Naast het bestuur zijn er ook leden actief op de achtergrond. Er is een websitebeheerder, een fotograaf van het koor en iemand die de verantwoording draagt voor ...</p>
                         <a class="btn btn-primary" href="/bestuur" style="background-color:#333; border-color:#333">Lees meer...</i></a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <a href="/info"><img class="img-responsive" src="images/Koor1.jpg" alt=""></a>
+                    <a href="/info"><img class="img-responsive" src="images/Koor1s.jpg" alt=""></a>
                     <div class="caption">
                         <a href="/info" style="text-decoration:none; color:#333333;">
                             <h3>

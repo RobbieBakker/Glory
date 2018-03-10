@@ -29,9 +29,9 @@
 
             <!-- Agenda item -->
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-7" style="width:600px; height:300px; overflow:hidden;">
                     <a href="{{ URL::to('agenda/' . $agendaItem->id) }}">
-                        <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
+                        <img class="img-responsive img-hover" src="/uploads/posters/{{ $agendaItem->image }}" alt="" >
                     </a>
                 </div>
                 <div class="col-md-5">

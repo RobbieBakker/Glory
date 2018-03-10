@@ -16,7 +16,7 @@
         <!-- if there are creation errors, they will show here -->
         {{ Html::ul($errors->all()) }}
 
-        {{ Form::open(array('url' => 'admin/agenda')) }}
+        {{ Form::open(array('url' => 'admin/agenda', 'files'=>'true')) }}
 
             <div class="form-group">
                 {{ Form::label('date', 'Date') }}
@@ -59,13 +59,13 @@
             </div>
 
             <div class="form-group">
-                {{ Form::label('img_url', 'Afbeeldings url') }}
-                {{ Form::text('img_url', Input::old('img_url'), array('class' => 'form-control')) }}
-            </div>
-
-            <div class="form-group">
                 {{ Form::label('website_url', 'Website url') }}
                 {{ Form::url('website_url', Input::old('website_url'), array('class' => 'form-control')) }}
+            </div>
+
+            <div class="form-group col-lg-12">
+                {{ Form::label('image', 'Image') }}
+                {{ Form::file('image', Input::old('image'), array('class' => 'form-control')) }}
             </div>
 
             {{ Form::submit('Create the Agenda item!', array('class' => 'btn btn-primary')) }}

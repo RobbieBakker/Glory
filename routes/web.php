@@ -58,7 +58,7 @@ Route::put('/profiel', [
         'as' => 'user.update',
         'uses' => 'ProfileController@update'
     ])->middleware('auth');
-Route::post('/profiel', 'ProfileController@update_avatar');
+Route::post('/profiel', 'ProfileController@updateAvatar');
 
 
 //Admin routes

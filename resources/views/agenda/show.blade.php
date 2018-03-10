@@ -29,7 +29,7 @@
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
-                            <img class="img-responsive" src="http://placehold.it/465x657" alt="">
+                            <img class="img-responsive" src="/uploads/posters/{{ $agendaItem->image }}" alt="">
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,8 @@ use Input;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 use DateTime;
+use Image;
+use File;
 
 class AgendaController extends Controller
 {
@@ -72,7 +74,7 @@ class AgendaController extends Controller
             'location_name' => 'required',
             'location_address' => 'required',
             'price' => 'required|numeric',
-            'img_url'      => '',
+            'image'      => 'file',
             'website_url' => '',
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -93,8 +95,18 @@ class AgendaController extends Controller
             $agendaItem->location_name = Input::get('location_name');
             $agendaItem->location_address       = Input::get('location_address');
             $agendaItem->price      = Input::get('price');
-            $agendaItem->img_url      = Input::get('img_url');
             $agendaItem->website_url = Input::get('website_url');
+
+            // Handle the upload of a poster
+            if($request->hasFile('image')){
+                $image = $request->file('image');
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                $img = Image::make($image)->save( public_path('/uploads/posters/' . $filename ) );
+
+                $agendaItem->image = $filename;
+                $img->destroy();
+            }
+
             $agendaItem->save();
 
             // redirect
@@ -155,7 +167,7 @@ class AgendaController extends Controller
             'location_name' => 'required',
             'location_address' => 'required',
             'price' => 'required|numeric',
-            'img_url'      => '',
+            'image'      => 'file',
             'website_url' => '',
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -181,8 +193,21 @@ class AgendaController extends Controller
             $agendaItem->location_name = Input::get('location_name');
             $agendaItem->location_address       = Input::get('location_address');
             $agendaItem->price = Input::get('price');
-            $agendaItem->img_url      = Input::get('img_url');
             $agendaItem->website_url = Input::get('website_url');
+
+            // Handle the upload of a poster
+            if($request->hasFile('image')){
+                $image = $request->file('image');
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                $img = Image::make($image)->save( public_path('/uploads/posters/' . $filename ) );
+
+                //Delete the deprecated poster
+                File::delete(public_path('/uploads/posters/' . $agendaItem->image));
+
+                $agendaItem->image = $filename;
+                $img->destroy();
+            }
+
             $agendaItem->save();
 
             // redirect

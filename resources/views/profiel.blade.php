@@ -18,6 +18,57 @@
         <div class="row">
             <div class="col-md-7">
                 <div class="panel panel-default">
+
+                    <div class="panel-heading">Profielfoto aanpassen</div>
+                    <div class="panel-body">
+                        <div class="col-md-10 col-md-offset-1">
+                            <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+                            <h2>{{ $user->name }}'s Profile</h2>
+                            <form enctype="multipart/form-data" action="/profiel" method="POST">
+                                <label>Update Profile Image</label>
+                                <input type="file" name="avatar">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" class="pull-right btn btn-sm btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Overzicht profielgegevens</div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <label class="col-md-6 control-label">Naam:</label>
+                            {{ Auth::user()->firstName }}&nbsp{{ Auth::user()->namePrefix }}&nbsp{{ Auth::user()->lastName }}
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="col-md-6 control-label">E-Mail:</label>
+                            {{ Auth::user()->email }}
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="col-md-6 control-label">Geboortedatum:</label>
+                            {{ Auth::user()->birthday }}
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="col-md-6 control-label">Gebruiker:</label>
+                            {{ Auth::user()->role }}
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="col-md-6 control-label">Zangstem:</label>
+                            {{ Auth::user()->voice }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="panel panel-default">
                     <div class="panel-heading">Profielgegevens aanpassen</div>
                     <div class="panel-body">
                         {!! Form::model($user, ['action' => ['ProfileController@update', 'id' => $user->id], 'method' => 'PUT']) !!}
@@ -81,39 +132,7 @@
 
             <div class="col-md-5">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Overzicht profielgegevens</div>
-                    <div class="panel-body">
-                        <div class="col-md-12">
-                            <label class="col-md-6 control-label">Naam:</label>
-                            {{ Auth::user()->firstName }}&nbsp{{ Auth::user()->namePrefix }}&nbsp{{ Auth::user()->lastName }}
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="col-md-6 control-label">E-Mail:</label>
-                            {{ Auth::user()->email }}
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="col-md-6 control-label">Geboortedatum:</label>
-                            {{ Auth::user()->birthday }}
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="col-md-6 control-label">Gebruiker:</label>
-                            {{ Auth::user()->role }}
-                        </div>
-
-                        <div class="col-md-12">
-                            <label class="col-md-6 control-label">Zangstem:</label>
-                            {{ Auth::user()->voice }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-5">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Wachtwoord veranderen</div>
+                    <div class="panel-heading">Wachtwoord aanpassen</div>
                     <div class="panel-body">
                         @if (session('error'))
                             <div class="alert alert-danger">

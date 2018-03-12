@@ -27,6 +27,10 @@ Route::get('contact', function () {
     return view('contact');
 });
 
+Route::get('webinfo', function () {
+    return view('webinfo');
+});
+
 Route::get('agenda', 'GuestController@agendaIndex');
 Route::get('/agenda/{id}', [
     'as' => 'agenda.show',

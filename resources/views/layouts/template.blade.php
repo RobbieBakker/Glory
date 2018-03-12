@@ -91,6 +91,7 @@
                                         <li {{{ (Request::is('/admin/index') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('/admin/index') ? 'color:white;' : '') }}}><a href="/admin/index" target="_blank" style="color:inherit">Admin Panel</a></li>
                                     @endif
                                     <li {{{ (Request::is('downloads') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('downloads') ? 'color:white;' : '') }}}><a href="/downloads" style="color:inherit">Downloads</a></li>
+                                    <li {{{ (Request::is('webinfo') ? 'style=background-color:#080808;' : '') }}}{{{ (Request::is('webinfo') ? 'color:white;' : '') }}}><a href="/webinfo" style="color:inherit">Over de website</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"  style="color:inherit">
                                             Uitloggen

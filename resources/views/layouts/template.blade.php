@@ -123,7 +123,7 @@
             <footer>
                 <div class="row">
                     <div class="col-lg-12">
-                        <p>Copyright &copy; CJK Glory <?php echo date("Y"); ?></p>
+                        <p>Copyright &copy; Robin Bakker <?php echo date("Y"); ?></p>
                     </div>
                 </div>
             </footer>

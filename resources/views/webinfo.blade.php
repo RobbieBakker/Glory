@@ -25,8 +25,9 @@
         <img class="img-responsive" src="../images/laravel.png" alt="">
     </div>
     <div class="col-md-6">
-        <h2>@version('small')</h2>
-        <p>@version('full')</p>
+        <h2>Glory (@version('small'))</h2>
+        <p>We draaien momenteel op @version.</p>
+        <p>Deze web applicatie is gemaakt door en de copyrights bevinden zich bij Robin Bakker. De applicatie is gemaakt als vrijwilligerswerk voor de organisatie van Christelijk Jongerenkoor Glory.</p>
     </div>
 </div>
 

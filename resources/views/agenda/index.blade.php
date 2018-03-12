@@ -26,7 +26,7 @@
         @endif
 
         @foreach($agendaItems as $key => $agendaItem)
-
+            <hr>
             <!-- Agenda item -->
             <div class="row">
                 <div class="col-md-7" style="width:600px; height:300px; overflow:hidden;">
@@ -43,8 +43,6 @@
                 </div>
             </div>
             <!-- /.row -->
-
-            <hr>
         @endforeach
 
 @endsection

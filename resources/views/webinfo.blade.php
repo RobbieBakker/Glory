@@ -26,7 +26,7 @@
     </div>
     <div class="col-md-6">
         <h2>@version('small')</h2>
-        <p>@version</p>
+        <p>@version('full')</p>
     </div>
 </div>
 

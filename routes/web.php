@@ -62,7 +62,7 @@ Route::put('/profiel', [
         'as' => 'user.update',
         'uses' => 'ProfileController@update'
     ])->middleware('auth');
-Route::post('/profiel', 'ProfileController@updateAvatar');
+Route::put('/avatar', 'ProfileController@updateAvatar');
 
 
 //Admin routes
@@ -75,3 +75,4 @@ Route::resource('admin/repetities', 'rehearsalController');
 Route::resource('/admin/agenda', 'AgendaController');
 
 Route::resource('/admin/users', 'UserController');
+Route::put('/admin/users/deleteAvatar/{id}', 'UserController@deleteAvatar');

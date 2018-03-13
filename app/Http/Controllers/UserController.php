@@ -9,6 +9,7 @@ use Validator;
 use Input;
 use Redirect;
 use Session;
+use File;
 
 class UserController extends Controller
 {
@@ -72,7 +73,7 @@ class UserController extends Controller
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('admin/users/create')
+            return Redirect::to('admin/users/create'd)
                 ->withErrors($validator)
                 ->withInput();
         } else {
@@ -177,5 +178,20 @@ class UserController extends Controller
         // redirect
         Session::flash('message', 'De gebruiker succesvol verwijderd!');
         return Redirect::to('/admin/users');
+    }
+
+    public function deleteAvatar($id){
+
+        $user = User::find($id);
+        if(strcmp($user->avatar, "user.jpg") ) {
+            File::delete(public_path('/uploads/avatars/' . $user->avatar));
+        }
+        $user->avatar = "user.jpg";
+        $user->save();
+
+        // show the edit form and pass the nerd
+        return View::make('admin/users.edit')
+            ->with('user', $user);
+
     }
 }

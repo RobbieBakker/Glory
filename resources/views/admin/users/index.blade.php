@@ -28,11 +28,11 @@
                         <a class="btn btn-small btn-success fa fa-plus-circle" href="{{ URL::to('admin/users/create') }}" title="Nieuwe gebruiker toevoegen"></a>
                     </div>
                     <!-- /.panel-heading -->
-                    <div class="panel-body">
+                    <div class="panel-body" style="overflow-x:auto; white-space:nowrap">
                         <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example" style="font-size:11px;">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th></th>
                                     <th>Naam</th>
                                     <th>E-mail</th>
                                     <th>Geboortedatum</th>
@@ -44,7 +44,8 @@
                             <tbody>
                                 @foreach($users as $key => $value)
                                     <tr>
-                                        <td>{{ $value->id }}</td>
+
+                                        <td style="width:68px; min-width:68px"><img class="img-responsive" src="/uploads/avatars/{{ $value->avatar }}" style="margin:0 auto; width:40px; height:40px; border-radius:50%;"></td>
                                         <td>{{ $value->firstName }}&nbsp;{{ $value->namePrefix }}&nbsp;{{ $value->lastName }}</td>
                                         <td>{{ $value->email }}</td>
                                         <td>{{ $value->birthday }}</td>

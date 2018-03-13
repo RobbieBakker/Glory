@@ -17,6 +17,19 @@
             <div class="alert alert-info">{{ Session::get('message') }}</div>
         @endif
 
+
+        {{ Form::open(array('url' => 'admin/users/deleteAvatar/' . $user->id)) }}
+        {{ Form::hidden('_method', 'PUT') }}
+            <div class="form-group">
+                <img src="/uploads/avatars/{{ $user->avatar }}" style="width:80px; height:80px; border-radius:50%; margin:25px 25px 25px 0px">
+
+
+                <button type="submit" class="btn btn-small btn-warning">Profielfoto verwijderen</button>
+
+            </div>
+        {{ Form::close() }}
+
+
         {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }}
 
             <div class="form-group">
@@ -56,8 +69,12 @@
             </div>
 
             <div class="form-group">
-                {{ Form::label('role', 'Permissies') }}
-                {{ Form::text('role', Input::old('role'), array('class' => 'form-control')) }}
+                <label for="role" class=" control-label">Permissies</label>
+                <br>
+                <select name="role">
+                    <option value="user" @if( Auth::user()->role == "user") selected @endif>User</option>
+                    <option value="admin" @if( Auth::user()->role == "admin") selected @endif>Admin</option>
+                </select>
             </div>
 
             {{ Form::submit('Opslaan!', array('class' => 'btn btn-primary')) }}

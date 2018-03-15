@@ -145,7 +145,7 @@ class UserController extends Controller
             'namePrefix'      => 'required|max:255',
             'lastName' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'birthday' => 'required|date|before:today',
+            'birthday' => 'date|before:today',
             'voice' => 'required',
             'role' => 'required'
         );
@@ -157,6 +157,9 @@ class UserController extends Controller
         $user->lastName=$request->input('lastName');
         $user->email=$request->input('email');
         $user->birthday=$request->input('birthday');
+        if(!strcmp($user->birthday, "")){
+            $user->birthday = NULL;
+        }
         $user->voice=$request->input('voice');
         $user->role=$request->input('role');
         $user->save();

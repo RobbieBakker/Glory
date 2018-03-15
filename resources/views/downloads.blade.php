@@ -41,7 +41,7 @@
                     </div>
                     <div class="panel-body" style="text-align:center">
                         <p>Download via onderstaande knop de laatste nieuwsbrief.</p>
-                        <a class="btn btn-primary" href="" style="background-color:#333; border-color:#333">Download</i></a>
+                        <a class="btn btn-primary" href="/downloadNieuwsbrief" style="background-color:#333; border-color:#333">Download</i></a>
                     </div>
                 </div>
             </div>

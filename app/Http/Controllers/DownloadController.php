@@ -13,7 +13,12 @@ class DownloadController extends Controller
     }
 
     public function downloadReglement()
-        {
-            return response()->download(public_path(). "/files/Huishoudelijk_Reglement.pdf", 'Huishoudelijk Reglement.pdf');
-        }
+    {
+        return response()->download(public_path(). "/files/Huishoudelijk_Reglement.pdf", 'Huishoudelijk Reglement.pdf');
+    }
+
+    public function downloadNieuwsbrief()
+    {
+        return response()->download(public_path(). "/uploads/newsletters/nieuwsbrief.pdf", 'Nieuwsbrief.pdf');
+    }
 }

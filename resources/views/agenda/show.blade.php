@@ -49,6 +49,7 @@
                 @endif
                 <p><b>Facebook:</b> <a href="{{ $agendaItem->website_url }}" target="_blank">{{ $agendaItem->website_url }}</a></p>
 
+                <a href="https://api.whatsapp.com/send?text={{ "http://www.jongerenkoorglory.nl" . $_SERVER['REQUEST_URI'] }}" data-action="share/whatsapp/share" target="_blank">Send message to WhatsApp</a>
             </div>
 
         </div>

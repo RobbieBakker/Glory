@@ -91,7 +91,7 @@ class ProfileController extends Controller {
             $user->save();
             $img->destroy();
 
-            Session::flash('avatarSuccess', 'Profielfoto is succesvol gewijzigd gewijzigd!');
+            Session::flash('avatarSuccess', 'Profielfoto is succesvol gewijzigd!');
             return redirect()->action('ProfileController@edit');
         }
         Session::flash('avatarError', 'Oeps, er is wat misgegaan');

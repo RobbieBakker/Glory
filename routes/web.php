@@ -53,6 +53,7 @@ Route::get('downloads', function () {
 })->middleware('auth');
 Route::get('downloadStatuten', 'DownloadController@downloadStatuten')->middleware('auth');
 Route::get('downloadReglement', 'DownloadController@downloadReglement')->middleware('auth');
+Route::get('downloadNieuwsbrief', 'DownloadController@downloadNieuwsbrief')->middleware('auth');
 
 Route::get('/profiel', [
         'as' => 'user.edit',
@@ -71,8 +72,11 @@ Route::get('/admin/index', function () {
     return view('admin/index');
 })->middleware('admin:admin');
 
-Route::resource('admin/repetities', 'rehearsalController');
-Route::resource('/admin/agenda', 'AgendaController');
+Route::resource('admin/repetities', 'rehearsalController')->middleware('admin:admin');
+Route::resource('/admin/agenda', 'AgendaController')->middleware('admin:admin');
 
-Route::resource('/admin/users', 'UserController');
-Route::put('/admin/users/deleteAvatar/{id}', 'UserController@deleteAvatar');
+Route::resource('/admin/users', 'UserController')->middleware('admin:admin');
+Route::put('/admin/users/deleteAvatar/{id}', 'UserController@deleteAvatar')->middleware('admin:admin');
+
+Route::get('admin/nieuwsbrief', 'NewsletterController@index')->middleware('admin:admin');
+Route::post('admin/nieuwsbrief', 'NewsletterController@updateNewsletter')->middleware('admin:admin');

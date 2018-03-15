@@ -170,6 +170,9 @@
                         <li>
                             <a href="/admin/repetities"><i class="fa fa-edit fa-fw"></i> Repetities</a>
                         </li>
+                        <li>
+                            <a href="/admin/nieuwsbrief"><i class="fa fa-edit fa-fw"></i> Nieuwsbrief</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

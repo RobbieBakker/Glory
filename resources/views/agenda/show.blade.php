@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Details')
+@section('title', $agendaItem->title)
 
 @section('body')
     @parent
@@ -49,6 +49,8 @@
                 @endif
                 <p><b>Facebook:</b> <a href="{{ $agendaItem->website_url }}" target="_blank">{{ $agendaItem->website_url }}</a></p>
 
+
+                <a href="whatsapp://send?text={{ "jongerenkoorglory.nl" . $_SERVER['REQUEST_URI'] }}" data-action="share/whatsapp/share">Send message to WhatsApp</a>
             </div>
 
         </div>

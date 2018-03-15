@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', 'Het koor')
+@section('title', 'Koor')
 
 @section('body')
     @parent

@@ -65,7 +65,7 @@ class UserController extends Controller
             'namePrefix' => 'max:255',
             'lastName' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
-            'birthday' => '|date|before:today',
+            'birthday' => 'date|before:today',
             'voice' => '',
             'role' => 'required',
         );
@@ -86,6 +86,9 @@ class UserController extends Controller
             $user->lastName        = Input::get('lastName');
             $user->email       = Input::get('email');
             $user->birthday      = Input::get('birthday');
+            if(!strcmp($user->birthday, "")){
+                $user->birthday = NULL;
+            }
             $user->voice        = Input::get('voice');
             $user->role        = Input::get('role');
             $user->password     = bcrypt($pw);

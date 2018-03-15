@@ -29,7 +29,7 @@
             <hr>
             <!-- Agenda item -->
             <div class="row">
-                <div class="col-md-7" style="width:600px; height:300px; overflow:hidden;">
+                <div class="col-md-7" style="height:300px; overflow:hidden;">
                     <a href="{{ URL::to('agenda/' . $agendaItem->id) }}">
                         <img class="img-responsive img-hover" src="/uploads/posters/{{ $agendaItem->image }}" alt="" >
                     </a>

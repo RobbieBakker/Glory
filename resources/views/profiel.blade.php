@@ -21,12 +21,23 @@
 
                     <div class="panel-heading">Profielfoto aanpassen</div>
                     <div class="panel-body">
+                        @if (session('avatarError'))
+                            <div class="alert alert-danger">
+                                {{ session('avatarError') }}
+                            </div>
+                        @endif
+                        @if (session('avatarSuccess'))
+                            <div class="alert alert-success">
+                                {{ session('avatarSuccess') }}
+                            </div>
+                        @endif
                         <div class="col-md-10 col-md-offset-1">
                             <img src="/uploads/avatars/{{ $user->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin:25px 25px 25px 0px;">
                             <br><br><br>
-                            <form enctype="multipart/form-data" action="/avatar" method="PUT">
+                            <form enctype="multipart/form-data" action="/avatar" method="POST">
+                                {{ csrf_field() }}
                                 <label>Profielfoto aanpassen</label>
-                                <input type="file" name="avatar">
+                                <input type="file" name="avatar" required>
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit" class="pull-right btn btn-sm btn-primary">
                             </form>

@@ -73,7 +73,7 @@ class UserController extends Controller
 
         // process the login
         if ($validator->fails()) {
-            return Redirect::to('admin/users/create'd)
+            return Redirect::to('admin/users/create')
                 ->withErrors($validator)
                 ->withInput();
         } else {

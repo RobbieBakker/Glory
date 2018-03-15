@@ -11,9 +11,9 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Hash;
-use Validator;
 use Image;
 use File;
+use Session;
 
 class ProfileController extends Controller {
 
@@ -90,9 +90,11 @@ class ProfileController extends Controller {
             $user->avatar = $filename;
             $user->save();
             $img->destroy();
+
+            Session::flash('avatarSuccess', 'Profielfoto is succesvol gewijzigd gewijzigd!');
+            return redirect()->action('ProfileController@edit');
         }
-
-        return redirect()->action('ProfileController@edit');
-
+        Session::flash('avatarError', 'Oeps, er is wat misgegaan');
+        return redirect()->back();
     }
 }

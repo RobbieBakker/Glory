@@ -5,7 +5,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
+        <meta name="description" content="@yield('description')">
+        <meta name="og:description" content="@yield('ogdescription')">
+        <meta name="og:title" content="@yield('ogtitle')">
+        <meta name="og:url" content="@yield('ogurl')>
+        <meta name="og:image" content=@yield('ogimg')>
+        <meta property="og:type" content="website" />
         <meta name="author" content="">
 
         <title>@yield('title') - CJK Glory</title>

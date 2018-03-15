@@ -1,6 +1,11 @@
 @extends('layouts.template')
 
-@section('title', 'Home')
+@section('title', 'Christelijk Jongerenkoor Glory')
+@section('description', 'Christelijk Jongerenkoor Glory uit Hardinxveld, opgericht in november 2012. Het koor staat onder leiding van dirigent Mark Brandwijk.')
+@section('ogdescription', 'Christelijk Jongerenkoor Glory uit Hardinxveld-Giessendam.')
+@section('ogtitle', 'Christelijk Jongerenkoor Glory')
+@section('ogurl', 'http://www.jongerenkoorglory.nl/')
+@section('ogimg', 'http://www.jongerenkoorglory.nl/images/Koor1s.jpg')
 
 @section('body')
     @parent

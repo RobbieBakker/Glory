@@ -4,8 +4,8 @@
 @section('description', "Full details of the concert.")
 @section('ogdescription', "Full details of the concert.")
 @section('ogtitle', $agendaItem->title)
-@section('ogurl', "http://www.jongerenkoorglory.nl/agenda/" . $agendaItem->id)
-@section('ogimg', "http://www.jongerenkoorglory.nl/uploads/posters/{{ $agendaItem->image }}")
+@section('ogurl', "http://www.jongerenkoorglory.nl/agenda/$agendaItem->id")
+@section('ogimg', "http://www.jongerenkoorglory.nl/uploads/posters/$agendaItem->image")
 
 @section('body')
     @parent

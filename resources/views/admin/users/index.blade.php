@@ -48,7 +48,7 @@
                                         <td style="width:68px; min-width:68px"><img class="img-responsive" src="/uploads/avatars/{{ $value->avatar }}" style="margin:0 auto; width:40px; height:40px; border-radius:50%;"></td>
                                         <td>{{ $value->firstName }}&nbsp;{{ $value->namePrefix }}&nbsp;{{ $value->lastName }}</td>
                                         <td>{{ $value->email }}</td>
-                                        <td>{{ $value->birthday }}</td>
+                                        <td>{{ date_format(date_create($value->birthday), "d-m-Y") }}</td>
                                         <td>{{ $value->voice }}</td>
                                         <td>{{ $value->role }}</td>
                                         <!-- we will also add show, edit, and delete buttons -->

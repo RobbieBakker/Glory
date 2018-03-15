@@ -52,27 +52,27 @@
                     <div class="panel-body">
                         <div class="col-md-12">
                             <label class="col-md-6 control-label">Naam:</label>
-                            {{ Auth::user()->firstName }}&nbsp{{ Auth::user()->namePrefix }}&nbsp{{ Auth::user()->lastName }}
+                            {{ $user->firstName }}&nbsp{{ $user->namePrefix }}&nbsp{{ $user->lastName }}
                         </div>
 
                         <div class="col-md-12">
                             <label class="col-md-6 control-label">E-Mail:</label>
-                            {{ Auth::user()->email }}
+                            {{ $user->email }}
                         </div>
 
                         <div class="col-md-12">
                             <label class="col-md-6 control-label">Geboortedatum:</label>
-                            {{ Auth::user()->birthday }}
+                            {{ date_format(date_create($user->birthday), "d-m-Y") }}
                         </div>
 
                         <div class="col-md-12">
                             <label class="col-md-6 control-label">Gebruiker:</label>
-                            {{ Auth::user()->role }}
+                            {{ $user->role }}
                         </div>
 
                         <div class="col-md-12">
                             <label class="col-md-6 control-label">Zangstem:</label>
-                            {{ Auth::user()->voice }}
+                            {{ $user->voice }}
                         </div>
                     </div>
                 </div>
@@ -128,10 +128,10 @@
                                 <label for="voice" class=" control-label">Zangstem</label>
                                 <br>
                                 <select name="voice">
-                                    <option value="Sopraan" @if( Auth::user()->voice == "Sopraan") selected @endif>Sopraan</option>
-                                    <option value="Alt" @if( Auth::user()->voice == "Alt") selected @endif>Alt</option>
-                                    <option value="Tenor" @if( Auth::user()->voice == "Tenor") selected @endif>Tenor</option>
-                                    <option value="Bas" @if( Auth::user()->voice == "Bas") selected @endif>Bas</option>
+                                    <option value="Sopraan" @if( $user->voice == "Sopraan") selected @endif>Sopraan</option>
+                                    <option value="Alt" @if( $user->voice == "Alt") selected @endif>Alt</option>
+                                    <option value="Tenor" @if( $user->voice == "Tenor") selected @endif>Tenor</option>
+                                    <option value="Bas" @if( $user->voice == "Bas") selected @endif>Bas</option>
                                 </select>
                             </div>
 

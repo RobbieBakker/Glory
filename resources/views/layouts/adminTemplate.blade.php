@@ -173,6 +173,9 @@
                         <li>
                             <a href="/admin/nieuwsbrief"><i class="fa fa-edit fa-fw"></i> Nieuwsbrief</a>
                         </li>
+                        <li>
+                            <a href="/admin/history"><i class="fa fa-edit fa-fw"></i> Geschiedenis</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -80,3 +80,5 @@ Route::put('/admin/users/deleteAvatar/{id}', 'UserController@deleteAvatar')->mid
 
 Route::get('admin/nieuwsbrief', 'NewsletterController@index')->middleware('admin:admin');
 Route::post('admin/nieuwsbrief', 'NewsletterController@updateNewsletter')->middleware('admin:admin');
+
+Route::get('admin/history', 'HistoryController@index')->middleware('admin:admin');

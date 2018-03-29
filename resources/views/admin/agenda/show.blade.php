@@ -26,7 +26,7 @@
                 <h3>Details</h3>
                 <p><b>Locatie:</b> {{ $agendaItem->location_name }}</p>
                 <p><b>Adres:</b> {{ $agendaItem->location_address }}</p>
-                <p><b>Datum:</b> {{ $agendaItem->date }}</p>
+                <p><b>Datum:</b> {{ date_format(date_create($agendaItem->date), "d-m-Y") }}</p>
                 <p><b>Tijden:</b> {{ $agendaItem->start_time }}-{{ $agendaItem->end_time }}</p>
                 <p><b>Toegangsprijs:</b> @if($agendaItem->price == "0.00") Gratis @else &euro;{{ number_format($agendaItem->price, 2, ',', ' ') }}  @endif</p>
                 @if ($agendaItem->img_url != "")

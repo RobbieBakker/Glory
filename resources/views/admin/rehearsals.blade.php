@@ -90,7 +90,7 @@
                             <tbody>
                                 @foreach($rehearsals as $key => $value)
                                     <tr>
-                                        <td>{{ $value->date }}</td>
+                                        <td>{{ date_format(date_create($value->date), "d-m-Y") }}</td>
                                         <td>{{ $value->start_time }}</td>
                                         <td>{{ $value->end_time }}</td>
                                         <td>{{ $value->location_name }}</td>

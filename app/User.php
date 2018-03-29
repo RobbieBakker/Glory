@@ -34,6 +34,11 @@ class User extends Authenticatable
         return $this->role;
     }
 
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
+
     public static function generatePassword(){
         // Generate random string
         return str_random(35);

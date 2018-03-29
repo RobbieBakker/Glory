@@ -36,7 +36,7 @@
                 </div>
                 <div class="col-md-5">
                     <h2>{{ $agendaItem->title }}</h2>
-                    <h2><small>{{ $agendaItem->date }} {{ $agendaItem->start_time }}</small></h2>
+                    <h2><small>{{ date_format(date_create($agendaItem->date),"d-m-Y") }} {{ $agendaItem->start_time }}</small></h2>
                     <p><b>Locatie: </b> {{ $agendaItem->location_name }}: {{ $agendaItem->location_address }}</p>
                     <p><b>Toegangsprijs:</b> @if($agendaItem->price == "0.00") Gratis @else &euro;{{ number_format($agendaItem->price, 2, ',', ' ') }}  @endif</p>
                     <a class="btn btn-primary" href="{{ URL::to('agenda/' . $agendaItem->id) }}">Lees meer</i></a>

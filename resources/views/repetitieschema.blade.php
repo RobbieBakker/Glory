@@ -45,7 +45,7 @@
                 <tr><th>#</th><th>Datum</th><th>Tijd</th><th>Locatie</th><th>Adres</th><th>Bijzonderheden</th></tr>
                 <!-- {{$id = 1}} -->
                 @foreach($rehearsals as $rehearsal)
-                    <tr><th>{{$id}}</th><td>{{$rehearsal->date}}</td><td>{{$rehearsal->time}}</td><td>{{$rehearsal->location_name}}</td><td>{{$rehearsal->location_address}}</td><td>{{$rehearsal->description}}</td></tr>
+                    <tr><th>{{$id}}</th><td>{{ date_format(date_create($rehearsal->date), "d-m-Y") }}</td><td>{{$rehearsal->time}}</td><td>{{$rehearsal->location_name}}</td><td>{{$rehearsal->location_address}}</td><td>{{$rehearsal->description}}</td></tr>
                     <!-- {{$id = $id + 1}} -->
                 @endforeach
             </table>

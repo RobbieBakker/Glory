@@ -9,7 +9,7 @@
         <meta property="og:description" content="@yield('ogdescription')">
         <meta property="og:title" content="@yield('ogtitle')">
         <meta property="og:url" content="@yield('ogurl')">
-        <meta property="og:image" content="@yield('ogimg')">
+        <meta property="og:image" itemprop="image" content="@yield('ogimg')">
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="nl_NL" />
 

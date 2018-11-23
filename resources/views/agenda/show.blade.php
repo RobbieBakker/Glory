@@ -1,11 +1,11 @@
 @extends('layouts.template')
 
 @section('title', $agendaItem->title)
-@section('description', "Full details of the concert.")
-@section('ogdescription', "Full details of the concert.")
+@section('description', "Klik voor meer details van het concert.")
+@section('ogdescription', "Klik voor meer details van het concert.")
 @section('ogtitle', $agendaItem->title)
-@section('ogurl', "http://www.jongerenkoorglory.nl/agenda/$agendaItem->id")
-@section('ogimg', "http://www.jongerenkoorglory.nl/uploads/posters/$agendaItem->image")
+@section('ogurl', "https://www.jongerenkoorglory.nl/agenda/$agendaItem->id")
+@section('ogimg', "https://www.jongerenkoorglory.nl/uploads/posters/$agendaItem->image")
 
 @section('body')
     @parent

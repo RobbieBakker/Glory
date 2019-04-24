@@ -29,16 +29,16 @@
             </div>
             <!-- Contact Details Column -->
             <div class="col-md-4">
-                <h3>Repetitielocatie</h3>
+                <h2>Repetitielocatie</h2>
                 <p>
                     Nieuweweg 57<br>3371 CJ, Hardinxveld-Giessendam<br>
                 </p>
                 <p style="color:#777; font-size:12px">
-                    LET OP! Bovenstaand adres is de repetitielocatie tenzij anders aangegeven.
+                    LET OP! Bovenstaand adres is de repetitielocatie! <i>(Tenzij anders aangegeven)</i>
                 </p>
             </div>
             <div class="col-md-4">
-                <h3>Contactgegevens</h3>
+                <h2>Contactgegevens</h2>
                 <p>
                     Peulenlaan 245<br>3371XL, Hardinxveld-Giessendam<br>
                 </p>

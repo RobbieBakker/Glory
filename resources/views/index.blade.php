@@ -17,6 +17,8 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -27,12 +29,22 @@
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('../images/Dirigent3.jpg');></div>
+                <div class="fill" style="background-image:url('../images/Koor11.jpg');></div>
                 <div class="carousel-caption">
                 </div>
             </div>
             <div class="item">
                 <div class="fill" style="background-image:url('../images/Koor3.jpg');"></div>
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('../images/Koor5.jpg');"></div>
+                <div class="carousel-caption">
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('../images/Koor7.jpg');"></div>
                 <div class="carousel-caption">
                 </div>
             </div>
@@ -115,7 +127,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <a href="/bestuur"><img class="img-responsive" src="images/Bestuur1.JPG" alt=""></a>
+                    <a href="/bestuur"><img class="img-responsive" src="images/Bestuur1s.JPG" alt=""></a>
                     <div class="caption">
                         <a href="/bestuur" style="text-decoration:none; color:#333333;">
                             <h3>

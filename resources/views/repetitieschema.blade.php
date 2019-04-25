@@ -38,7 +38,12 @@
 
         <div class="panel panel-default">
             <!-- Default panel contents -->
-            <div class="panel-heading">Repetitieschema</div>
+            <div class="panel-heading">
+                Repetitieschema
+                @if( Auth::check() )
+                    <a href="/repetitieschema/export"><img src="images/calendar.png" style="width:30px; float:right;"></a>
+                @endif()
+            </div>
 
             <!-- Table -->
             <table class="table">

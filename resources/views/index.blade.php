@@ -127,7 +127,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <div class="thumbnail">
-                    <a href="/bestuur"><img class="img-responsive" src="images/Bestuur1s.JPG" alt=""></a>
+                    <a href="/bestuur"><img class="img-responsive" src="images/Bestuur1s.jpg" alt=""></a>
                     <div class="caption">
                         <a href="/bestuur" style="text-decoration:none; color:#333333;">
                             <h3>
@@ -135,7 +135,7 @@
                                 <small> <br /></small>
                             </h3>
                         </a>
-                        <p>Het bestuur bestaat uit vijf leden: Anneleen Houtman, Arjan van Veen, Lenneke Quist, Christine Kruithof en Joanne Molenaar - van der Ham. Naast het bestuur zijn er ook leden actief op de achtergrond. Er is een websitebeheerder, een fotograaf van het koor en iemand die de verantwoording draagt voor ...</p>
+                        <p>Het bestuur bestaat uit vijf leden: Anneleen Houtman, Arjan van Veen, Lenneke Quist, Jolien Stekelenburg en Robin Bakker. Naast het bestuur zijn er ook leden actief op de achtergrond. Zo helpen een aantal leden mee met de PR, is er een corveegroep en iemand die de verantwoording draagt voor ...</p>
                         <a class="btn btn-primary" href="/bestuur" style="background-color:#333; border-color:#333">Lees meer...</i></a>
                     </div>
                 </div>
